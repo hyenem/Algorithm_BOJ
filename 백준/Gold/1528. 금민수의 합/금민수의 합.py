@@ -27,7 +27,7 @@ while q:
         nxt = cur + gold
         if nxt > N:
             continue
-        if dp[nxt] == -1 or dp[nxt] > dp[cur] + 1:
+        if dp[nxt] == -1:
             dp[nxt] = dp[cur] + 1
             prev[nxt] = cur
             used[nxt] = gold
