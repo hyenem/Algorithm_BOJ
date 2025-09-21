@@ -5,10 +5,10 @@ using namespace std;
 vector<pair<int, int>> dxdy = {{0, -1}, {0, 1}};
 
 void clear_row(vector<vector<int>> &color, int row){
-    for(int i = row; i>0; i--){
-        color[i] = color[i-1];
+    for(int i = row; i > 0; --i){
+        color[i].swap(color[i-1]); // 복사 대신 swap
     }
-    color[0]=vector<int>(4);
+    fill(color[0].begin(), color[0].end(), 0);
 }
 
 void gravity(vector<vector<int>> &color, int &ans){
@@ -108,6 +108,9 @@ void drop(vector<vector<int>> &color, int type, int y, int &ans, int round){
 }
 
 int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+
 
     vector<vector<int>> blue(6, vector<int>(4));
     vector<vector<int>> green(6, vector<int>(4));
