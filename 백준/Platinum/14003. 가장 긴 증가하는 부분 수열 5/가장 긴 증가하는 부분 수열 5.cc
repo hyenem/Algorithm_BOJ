@@ -18,6 +18,10 @@ void binary(int i, int *arr, int *inum, int *iidx, int *parent, int left, int ri
 }
 
 int main(){
+    
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
+    
     int N;
     cin >> N;
 
