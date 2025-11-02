@@ -37,8 +37,7 @@ int query(int s, int e, int pos, int left, int right){
 
     int mid = (left+right)/2;
     int ans = query(s, e, pos*2, left, mid) + query(s, e, pos*2+1, mid+1, right);
-
-    tree[pos] = tree[pos*2] + tree[pos*2+1];
+    
     return ans;
 }
 int main(){
