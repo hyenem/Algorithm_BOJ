@@ -15,9 +15,8 @@ void addNode(int s, int e){
     adjr[e] = new Node(s, adjr[e]);
 }
 int visited[MAXN];
-int stack[MAXN];
-int pointer = -1;
 int cnt;
+int last;
 
 void dfsfirst(int idx){
     visited[idx] = 1;
@@ -25,7 +24,7 @@ void dfsfirst(int idx){
         if(visited[n->end]==1) continue;
         dfsfirst(n->end);
     }
-    stack[++pointer] = idx;
+    last = idx;
 }
 void dfssecond(int idx){
     visited[idx] = 2;
@@ -51,7 +50,7 @@ int main(){
         if(visited[i]==1) continue;
         dfsfirst(i);
     }
-    dfssecond(stack[pointer]);
+    dfssecond(last);
     if(cnt==N) cout << "Yes";
     else cout << "No";
 }
